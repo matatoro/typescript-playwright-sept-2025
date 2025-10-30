@@ -23,35 +23,35 @@
 
 // //await
 async function delay(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function demo() {
-  await delay(2000);
-  console.log("2 seconds delay"); // Runs 1st
+	await delay(2000);
+	console.log("2 seconds delay"); // Runs 1st
 
-  await delay(3000);
-  console.log("3 seconds delay"); // Runs 2nd
+	await delay(3000);
+	console.log("3 seconds delay"); // Runs 2nd
 
-  await delay(1000);
-  console.log("1 second delay"); // Runs 3rd
+	await delay(1000);
+	console.log("1 second delay"); // Runs 3rd
 }
 
 demo();
 
 interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
+	id: number;
+	title: string;
+	price: number;
+	description: string;
+	category: string;
+	image: string;
 }
 
 async function getData(): Promise<Product> {
-  const response = await fetch("https://fakestoreapi.com/products/1");
-  const data: Product = await response.json();
-  return data;
+	const response = await fetch("https://fakestoreapi.com/products/1");
+	const data: Product = await response.json();
+	return data;
 }
 
 getData();
